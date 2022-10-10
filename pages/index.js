@@ -10,7 +10,6 @@ import { Link } from "react-scroll";
 
 export default function Home() {
 
-
   const [audio, setAudio] = useState(null)
   const [muted, setMuted] = useState(true)
 
@@ -185,12 +184,12 @@ export default function Home() {
           </div>
           <div className='h-screen w-[420px] bg-yellow-100 mt-2 flex justify-center rounded-xl' id='gift'>
             <div className='h-[300px] w-[390px] rounded-lg mt-12 flex flex-col items-center px-5 relative shadow-lg'>
-              <div className='text-xl mt-9 z-20'>
+              <div className='text-xl mt-9 z-10'>
                 <FontAwesomeIcon icon={faGift} className="fa-2xl scale-125"/>
               </div>
-              <p className='font-bold text-xl mt-7 z-20'>Kirim Hadiah</p>
-              <p className='mt-3 text-base text-center leading-4 z-20'>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
-              <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-20'
+              <p className='font-bold text-xl mt-7 z-10'>Kirim Hadiah</p>
+              <p className='mt-3 text-base text-center leading-4 z-10'>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
+              <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
                 animate={{ scale: .9 }}
                 transition={{
                   repeat: Infinity,
@@ -220,8 +219,8 @@ export default function Home() {
             </div>
             {
               showRekening? 
-                <div className='w-[400px] h-[200px] bg-gray-700 mt-3 rounded-3xl relative shadow-yellow-100 shadow-sm'>
-                <Image className='rounded-3xl' src="/images/card.jpg" layout='fill'/>
+                <div className='w-[400px] h-[200px] bg-gray-700 mt-3 rounded-3xl relative shadow-yellow-100 shadow-sm fill'>
+                <img className='rounded-3xl' src="/images/card.jpg" layout='fill' alt='card'/>
                 <p className='text-xl absolute font-bold left-10 bottom-16 opacity-50'>6610706647</p>
                 <p className='text-xl absolute font-bold left-10 bottom-10 opacity-50'>ABU SYAFIQ ARRIDHO</p>
                 <div
