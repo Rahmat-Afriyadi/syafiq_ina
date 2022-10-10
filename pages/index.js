@@ -118,8 +118,8 @@ export default function Home() {
       {
         load ?
       <>
-        <div className='h-[40px] w-full text-center flex items-center justify-center text-2xl' id='home'>Reception &nbsp; <FontAwesomeIcon icon={faLeaf}/> &nbsp; Invitation</div>
-        <div className='h-auto w-full py-5 text-center fixed flex justify-center items-center bottom-0 z-20'>
+        <div className='h-[40px] w-full text-center flex items-center justify-center text-2xl overflow-x-hidden' id='home'>Reception &nbsp; <FontAwesomeIcon icon={faLeaf}/> &nbsp; Invitation</div>
+        <div className='h-auto w-full py-5 text-center fixed flex justify-center items-center bottom-0 z-20 overflow-x-hidden'>
           <div className='w-[260px] h-auto bg-purple-400 flex justify-between py-1 px-2 rounded-lg'>
             <Link to="home"
               smooth={true} className='h-10 w-10 bg-red-200 rounded-md hover:bg-gray-800 flex items-center justify-center'>
@@ -143,7 +143,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className='w-full h-auto flex flex-col items-center'>
+        <div className='w-full h-auto flex flex-col items-center overflow-x-hidden'>
           <div className='h-screen w-[420px] relative'>
             <Image className='rounded-3xl' src="/images/depan1.png" layout='fill'
             />
