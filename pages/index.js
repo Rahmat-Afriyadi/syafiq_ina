@@ -154,10 +154,12 @@ export default function Home() {
           <div className="h-screen w-[420px] relative z-10 px-24 rounded-xl -mt-2">
             <Image className='rounded-3xl' src="/images/belakang2.png" layout='fill' />
           </div>
-          <div className="h-screen w-[420px] relative rounded-xl text-center" id="calendar">
-            <p className='text-2xl font-bold relative z-10 mt-14'>Minggu, 04 Desember 2022</p>
-            <p className='text-lg relative z-10 mt-2'>Pukul: 08:00</p>
-            <div className='w-[320px] h-20 relative z-10 flex justify-evenly items-center ml-auto mr-auto mt-10'>
+
+          {/* jadwal */}
+          <div className="h-screen w-[420px] relative rounded-xl text-center flex flex-col items-center justify-center" id="calendar">
+            <p className='text-2xl font-bold z-10 mt-14'>Minggu, 04 Desember 2022</p>
+            <p className='text-lg z-10 mt-2'>Pukul: 08:00</p>
+            <div className='w-[320px] h-20 z-10 flex justify-evenly items-center mt-10'>
               <div className='w-16 h-14 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
                 <p className='text-4xl text-yellow-600 font-semibold'>{days < 10 ? "0"+days: days}</p>
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Hari</p>
@@ -175,15 +177,16 @@ export default function Home() {
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Detik</p>
               </div>
             </div>
-            <div className='w-[390px] relative z-10 ml-[15px] mt-10'>
+            <div className='w-[390px] z-10 mt-10'>
               <p className='text-2xl text-center'>QS. Ar-Rum Ayat 21</p>
               <br></br>
               <p className='text-lg text-center'>Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
-            </div>
+            </div>            
             <Image className='rounded-3xl' src="/images/bg.png" layout='fill'/>
           </div>
+
           <div className='h-screen w-[420px] bg-yellow-100 mt-2 flex justify-center rounded-xl' id='gift'>
-            <div className='h-[300px] w-[390px] rounded-lg mt-12 flex flex-col items-center px-5 relative shadow-lg'>
+            <div className='h-[300px] w-[390px] rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
               <div className='text-xl mt-9 z-10'>
                 <FontAwesomeIcon icon={faGift} className="fa-2xl scale-125"/>
               </div>
@@ -204,7 +207,7 @@ export default function Home() {
               <Image src="/images/bg.jpg" layout='fill' className='rounded-xl'/>
             </div>
           </div>
-          <motion.div className='w-[420px] h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0' 
+          <motion.div className='w-[420px] h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0 left-auto right-auto' 
               variants={modal_animate}
               initial="hidden"
               animate={showModal ? "show" : "hidden"}>
