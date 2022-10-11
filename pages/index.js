@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faClose, faCopy, faGift, faLeaf } from "@fortawesome/free-solid-svg-icons"
 import Image from 'next/image'
-import Navbar from '../components/navbar'
+import Navbar from '../components/Navbar'
 import Hero from '../components/Hero';
 import Jadwal from '../components/Jadwal';
 import More from '../components/More';
