@@ -10,7 +10,10 @@ export default function Hero()
     const [audio, setAudio] = useState(null)
 
     useEffect(function(){
-        setAudio(new Audio("/music/song.mp3")) 
+        const timer = setTimeout(() => {
+            setAudio(new Audio("/music/song.mp3")) 
+        }, 2100);
+        return () => clearTimeout(timer);
     },[]);
 
     useEffect(function(){
