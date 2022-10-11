@@ -63,10 +63,10 @@ export default function More(){
                 <div className='w-full h-[43px] bg-slate-700 rounded-3xl rounded-b-none text-white text-2xl text-bold'>
                     <FontAwesomeIcon icon={faClose} className="absolute mt-2 right-8 cursor-pointer" onClick={()=>{setShowModal(false)}}/>
                 </div>
-                <div className='w-5/6 h-[57px] bg-gray-300 rounded-xl mt-3 text-center'>
+                <div className='w-5/6 h-auto bg-gray-300 rounded-xl mt-5 text-center py-1 px-1'>
                     <p className='text-base p-1'>Silahkan transfer hadiah melalui nomor rekening maupun dompet digital berikut :</p>
                 </div>
-                <div className='w-5/6 h-[45px] bg-gray-300 rounded-xl mt-3 px-5 flex items-center cursor-pointer' onClick={ () => showRekening ? setShowRekening(false): setShowRekening(true)}>
+                <div className='w-5/6 h-auto bg-gray-300 rounded-xl mt-5 px-5 flex items-center cursor-pointer py-1' onClick={ () => showRekening ? setShowRekening(false): setShowRekening(true)}>
                 <p className='text-lg p-1 font-bold'><FontAwesomeIcon icon={faGift}/> &ensp; Rekening</p>
                 </div>
                 {

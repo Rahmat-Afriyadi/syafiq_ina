@@ -50,19 +50,19 @@ export default function Jadwal(){
             <p className='text-2xl font-bold z-10 mt-10 px-2'>Minggu, 04 Desember 2022</p>
             <p className='text-lg z-10 mt-2'>Pukul: 08:00</p>
             <div className='w-[320px] h-20 z-10 flex justify-evenly items-center mt-10'>
-            <div className='w-16 h-14 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
+            <div className='w-16 h-16 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
                 <p className='text-4xl text-yellow-600 font-semibold'>{days < 10 ? "0"+days: days}</p>
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Hari</p>
             </div>
-            <div className='w-16 h-14 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
+            <div className='w-16 h-16 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
                 <p className='text-4xl text-yellow-600 font-semibold'>{hours < 10 ? "0"+hours: hours}</p>
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Jam</p>
             </div>
-            <div className='w-16 h-14 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
+            <div className='w-16 h-16 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
                 <p className='text-4xl text-yellow-600 font-semibold'>{minutes < 10 ? "0"+minutes: minutes}</p>
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Menit</p>
             </div>
-            <div className='w-16 h-14 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
+            <div className='w-16 h-16 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
                 <p className='text-4xl text-yellow-600 font-semibold'>{seconds < 10 ? "0"+seconds: seconds}</p>
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Detik</p>
             </div>
