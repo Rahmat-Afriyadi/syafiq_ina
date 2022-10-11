@@ -4,25 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
-export default function Hero()
+export default function Hero({audio})
 {
-    const [muted, setMuted] = useState(true)
-    const [audio, setAudio] = useState(null)
-
-    const onScroll = function(){
-        console.log("test")
-        if (audio == null) {
-            console.log("masuk sini")
-            setAudio(new Audio("/music/song.mp3"))          
-            setMuted(false)  
-        }            
-    }
-
-    useEffect(function(){
-        document.body.addEventListener('click', onScroll, true); 
-    // remove event on unmount to prevent a memory leak with the cleanup
-        return () => document.body.removeEventListener('click', onScroll, true); 
-    },[audio]);
+    const [muted, setMuted] = useState(false)
 
     useEffect(function(){
         if (audio != null) {
@@ -43,9 +27,10 @@ export default function Hero()
 
     return (
         <div className='h-screen w-full sm:w-[540px] xl:w-4/12 relative flex flex-col items-end px-3'>
-            <Image className='rounded-3xl' src="/images/depan3.png" layout='fill' alt="cover_hero" />
+            <Image className='rounded-3xl' src="/images/depan4.png" layout='fill' alt="cover_hero" />
             <div className="ml-auto mr-auto mb-auto mt-36">
                 <Image src="/images/main.png" width={350} height={350} className="z-10" alt="main"/>
+                <p className='z-10 text-3xl text-center px-3 font-qamila text-pink-500 scale-150 -mt-8'>Ina & Syafiq</p>
             </div>
             <button className='w-9 h-9 bg-green-300 fixed bottom-24 rounded-full z-20 opacity-80' onClick={turnAudio}>
                 <FontAwesomeIcon icon={muted ? faVolumeMute: faVolumeUp} style={{ fontSize: 20, color: "green" }}/>
