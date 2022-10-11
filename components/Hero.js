@@ -6,12 +6,18 @@ import Image from "next/image"
 
 export default function Hero()
 {
-    const [muted, setMuted] = useState(true)
+    const [muted, setMuted] = useState(false)
     const [audio, setAudio] = useState(null)
 
     useEffect(function(){
-        setAudio(new Audio("/music/song.mp3")) 
+        // setAudio(new Audio("/music/song.mp3")) 
     },[]);
+
+    useEffect(function(){
+        if (audio != null) {
+            audio.play()            
+        }
+    },[audio]);
 
     function turnAudio(){
         if (audio.paused) {
@@ -24,10 +30,10 @@ export default function Hero()
     }
 
     return (
-        <div className='h-screen w-full md:w-11/12 lg:w-6/12 xl:w-4/12 relative'>
-            <Image className='rounded-3xl' src="/images/depan1.png" layout='fill'
-            />
-            <button className='w-9 h-9 bg-green-300 fixed bottom-24 ml-[370px] rounded-full z-20' onClick={turnAudio}>
+        <div className='h-screen w-full sm:w-[540px] xl:w-4/12 relative flex flex-col items-end px-3'>
+            <Image className='rounded-3xl' src="/images/depan3.png" layout='fill'/>
+            <img src="/images/main.png" width={350} height={350} className="ml-auto mr-auto z-10 mt-36 mb-auto"/>
+            <button className='w-9 h-9 bg-green-300 fixed bottom-24 rounded-full z-20 opacity-80' onClick={turnAudio}>
                 <FontAwesomeIcon icon={muted ? faVolumeMute: faVolumeUp} style={{ fontSize: 20, color: "green" }}/>
             </button>
         </div>

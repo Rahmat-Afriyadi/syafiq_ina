@@ -9,38 +9,34 @@ import More from '../components/More';
 
 
 export default function Home() {
+
   
   const [load, setLoad] = useState(true)
 
-    const yoyo = {
-    initial: {
-      scale: .9,
-    },
-    animate: {
-      scale: 1
-    },
-    transition: {
-      yoyo: 2,
-      repeat: Infinity
-    },
-  };
+  useEffect(() => {
+    window.addEventListener("DOMContentLoaded", event => {
+      const audio = document.querySelector("audio");
+      audio.volume = 0.2;
+      audio.play();
+    });
+  },[])
  
 
   return (
     <>
-      {/* <div className='w-full h-screen bg-black relative z-30'>
+      {/* <div className='w-full h-screen bg-black relative z-30 overflow-y-hidden'>
         <Image src="/images/bg.jpg" layout='fill'/>
       </div> */}
 
       {
         load ?
       <>
-      <div className='w-full flex flex-col items-center overflow-x-hidden'>
+      <div className='w-full flex flex-col items-center overflow-x-hidden overflow-y-hidden'> 
         <div className='h-[40px] text-center text-2xl' id='home'>Reception &nbsp; <FontAwesomeIcon icon={faLeaf}/> &nbsp; Invitation</div>
         <Navbar/>
         <Hero/>
-        <div className="h-screen w-full md:w-11/12 lg:w-6/12 xl:w-4/12 relative z-10 rounded-xl -mt-2">
-          <Image className='rounded-3xl' src="/images/belakang2.png" layout='fill' />
+        <div className="h-screen w-full sm:w-[540px] xl:w-4/12 relative z-10 rounded-xl -mt-2">
+          <Image className='rounded-3xl' src="/images/belakang3.png" layout='fill' />
         </div>
         <Jadwal/>
         <More/>

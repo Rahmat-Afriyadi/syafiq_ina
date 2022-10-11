@@ -33,7 +33,7 @@ export default function More(){
     }
 
     return (
-        <div className='h-screen w-full md:w-11/12 lg:w-6/12 xl:w-4/12 bg-yellow-100 mt-2 flex justify-center rounded-2xl' id='gift'>
+        <div className='h-screen w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex justify-center rounded-2xl' id='gift'>
             <div className='h-[300px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
                 <div className='text-xl mt-9 z-10'>
                     <FontAwesomeIcon icon={faGift} className="fa-2xl scale-125"/>
@@ -56,7 +56,7 @@ export default function More(){
             </div>
 
             {/* modal hadiah */}
-            <motion.div className='w-full md:w-11/12 lg:w-6/12 xl:w-4/12 h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0 left-auto right-auto' 
+            <motion.div className='w-full sm:w-[540px] xl:w-4/12 h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0 left-auto right-auto' 
               variants={modal_animate}
               initial="hidden"
               animate={showModal ? "show" : "hidden"}>
