@@ -26,6 +26,7 @@ export default function Hero()
 
     useEffect(function(){
         if (audio != null) {
+            audio.muted = false
             audio.play()            
         }
     },[audio]);
