@@ -19,9 +19,9 @@ export default function Hero()
     }
 
     useEffect(function(){
-        window.addEventListener("scroll", onScroll, { passive: true });
+        document.body.addEventListener('click', onScroll, true); 
     // remove event on unmount to prevent a memory leak with the cleanup
-        return () => window.removeEventListener("scroll", onScroll, { passive: true });
+        return () => document.body.removeEventListener('click', onScroll, true); 
     },[audio]);
 
     useEffect(function(){
