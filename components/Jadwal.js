@@ -14,7 +14,6 @@ export default function Jadwal(){
     
         var updateTime = setInterval(() => {
         var now = new Date().getTime();
-        console.log(new Date().getTime())
 
         var difference = countDownDate - now;
         // difference = 0

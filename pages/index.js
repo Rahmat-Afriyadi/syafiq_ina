@@ -13,14 +13,6 @@ export default function Home() {
   
   const [load, setLoad] = useState(true)
 
-  useEffect(() => {
-    window.addEventListener("DOMContentLoaded", event => {
-      const audio = document.querySelector("audio");
-      audio.volume = 0.2;
-      audio.play();
-    });
-  },[])
- 
 
   return (
     <>

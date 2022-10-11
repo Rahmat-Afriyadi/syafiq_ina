@@ -6,15 +6,23 @@ import Image from "next/image"
 
 export default function Hero()
 {
-    const [muted, setMuted] = useState(false)
+    const [muted, setMuted] = useState(true)
     const [audio, setAudio] = useState(null)
 
+    const onScroll = function(){
+        console.log("test")
+        if (audio == null) {
+            console.log("masuk sini")
+            setAudio(new Audio("/music/song.mp3"))          
+            setMuted(false)  
+        }            
+    }
+
     useEffect(function(){
-        const timer = setTimeout(() => {
-            setAudio(new Audio("/music/song.mp3")) 
-        }, 2100);
-        return () => clearTimeout(timer);
-    },[]);
+        window.addEventListener("scroll", onScroll, { passive: true });
+    // remove event on unmount to prevent a memory leak with the cleanup
+        return () => window.removeEventListener("scroll", onScroll, { passive: true });
+    },[audio]);
 
     useEffect(function(){
         if (audio != null) {
