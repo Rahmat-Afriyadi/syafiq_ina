@@ -36,7 +36,7 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <div className="h-screen w-full sm:w-[540px] xl:w-4/12 relative z-10 rounded-xl -mt-2">
-          <Image className='rounded-3xl' src="/images/belakang3.png" layout='fill' />
+          <Image className='rounded-3xl' src="/images/belakang3.png" layout='fill' alt='couple'/>
         </div>
         <Jadwal/>
         <More/>

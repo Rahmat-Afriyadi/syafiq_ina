@@ -52,7 +52,7 @@ export default function More(){
                     <FontAwesomeIcon icon={faGift} className="fa-xl"/>
                     &ensp; Amplop Digital
                 </motion.div>
-                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl'/>
+                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg"/>
             </div>
 
             {/* modal hadiah */}
@@ -72,7 +72,7 @@ export default function More(){
                 {
                 showRekening? 
                     <div className='w-[400px] h-[200px] bg-gray-700 mt-3 rounded-3xl relative shadow-yellow-100 shadow-sm fill'>
-                    <img className='rounded-3xl' src="/images/card.jpg" layout='fill' alt='card'/>
+                    <Image className='rounded-3xl' src="/images/card.jpg" layout='fill' alt='card'/>
                     <p className='text-xl absolute font-bold left-10 bottom-16 opacity-50'>6610706647</p>
                     <p className='text-xl absolute font-bold left-10 bottom-10 opacity-50'>ABU SYAFIQ ARRIDHO</p>
                     <div
