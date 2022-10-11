@@ -46,8 +46,8 @@ export default function Jadwal(){
     }, [countDownDate])
 
     return (
-        <div className="h-screen w-full sm:w-[540px] xl:w-4/12 relative rounded-xl text-center flex flex-col items-center justify-center" id="calendar">
-            <p className='text-2xl font-bold z-10 mt-10'>Minggu, 04 Desember 2022</p>
+        <div className="h-screen w-full sm:w-[540px] xl:w-4/12 relative rounded-xl text-center flex flex-col items-center justify-center px-4 pb-3" id="calendar">
+            <p className='text-2xl font-bold z-10 mt-10 px-2'>Minggu, 04 Desember 2022</p>
             <p className='text-lg z-10 mt-2'>Pukul: 08:00</p>
             <div className='w-[320px] h-20 z-10 flex justify-evenly items-center mt-10'>
             <div className='w-16 h-14 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
@@ -67,10 +67,10 @@ export default function Jadwal(){
                 <p className='text-lg -mt-2 text-slate-800 opacity-75'>Detik</p>
             </div>
             </div>
-            <div className='w-[390px] z-10 mt-10'>
-            <p className='text-2xl text-center'>QS. Ar-Rum Ayat 21</p>
-            <br></br>
-            <p className='text-lg text-center'>Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+            <div className='w-full z-10 mt-10 px-3 pb-3'>
+                <p className='text-2xl text-center'>QS. Ar-Rum Ayat 21</p>
+                <br></br>
+                <p className='text-lg text-center'>Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
             </div>            
             <Image className='rounded-3xl' src="/images/bg.png" layout='fill' alt="bg"/>
         </div>

@@ -56,17 +56,17 @@ export default function More(){
             </div>
 
             {/* modal hadiah */}
-            <motion.div className='w-full sm:w-[540px] xl:w-4/12 h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0 left-auto right-auto' 
+            <motion.div className='w-full sm:w-[540px] xl:w-4/12 h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0 left-auto right-auto ' 
               variants={modal_animate}
               initial="hidden"
               animate={showModal ? "show" : "hidden"}>
-                <div className='w-full h-[40px] bg-slate-700 rounded-3xl rounded-b-none text-white text-2xl text-bold'>
+                <div className='w-full h-[43px] bg-slate-700 rounded-3xl rounded-b-none text-white text-2xl text-bold'>
                     <FontAwesomeIcon icon={faClose} className="absolute mt-2 right-8 cursor-pointer" onClick={()=>{setShowModal(false)}}/>
                 </div>
-                <div className='w-[400px] h-[57px] bg-gray-300 rounded-xl mt-3 text-center'>
-                <p className='text-base p-1'>Silahkan transfer hadiah melalui nomor rekening maupun dompet digital berikut :</p>
+                <div className='w-5/6 h-[57px] bg-gray-300 rounded-xl mt-3 text-center'>
+                    <p className='text-base p-1'>Silahkan transfer hadiah melalui nomor rekening maupun dompet digital berikut :</p>
                 </div>
-                <div className='w-[400px] h-[45px] bg-gray-300 rounded-xl mt-3 px-5 flex items-center cursor-pointer' onClick={ () => showRekening ? setShowRekening(false): setShowRekening(true)}>
+                <div className='w-5/6 h-[45px] bg-gray-300 rounded-xl mt-3 px-5 flex items-center cursor-pointer' onClick={ () => showRekening ? setShowRekening(false): setShowRekening(true)}>
                 <p className='text-lg p-1 font-bold'><FontAwesomeIcon icon={faGift}/> &ensp; Rekening</p>
                 </div>
                 {
