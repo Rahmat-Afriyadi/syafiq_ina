@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function NavItem({to, icon}) {
 
-
     return (
+        
         <Link
             to={to}
             smooth={true}

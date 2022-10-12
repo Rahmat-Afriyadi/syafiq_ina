@@ -9,6 +9,7 @@ import More from '../components/More';
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
+import Couple from '../components/Couple'
 
 
 export default function Home() {
@@ -20,14 +21,20 @@ export default function Home() {
   const [load, setLoad] = useState(false)
 
   const cover_animate = {
-    hidden: { x: "100vw" },
+    hidden: { 
+      x: "100vw", 
+      opacity: 0,
+      transition: {
+        duration:1
+      } },
     show: {
-      x:0
-    },
-    transition: {
-      typeo: "tween",
-      duration: 5,
-    },
+      x:0,    
+      opacity:1,
+      transition: {
+        type: "tween",
+        duration: .8,
+      },  
+    },    
   };
 
   const [muted, setMuted] = useState(true)
@@ -37,7 +44,7 @@ export default function Home() {
         console.log("test")
         if (audio == null) {
             console.log("masuk sini")
-            // setAudio(new Audio("/music/song.mp3"))          
+            setAudio(new Audio("/music/song1.mp3"))          
             setMuted(false)  
         }            
     }
@@ -65,7 +72,7 @@ export default function Home() {
 
 
     
-    <div className='fixed top-0 w-full'>
+    <div className='fixed top-0 w-full z-10'>
           <motion.div
           variants={cover_animate}
           initial="hidden"
@@ -105,9 +112,7 @@ export default function Home() {
         <div className='h-[40px] text-center text-2xl' id='home'>Reception &nbsp; <FontAwesomeIcon icon={faLeaf}/> &nbsp; Invitation</div>
         <Navbar/>
         <Hero audio={audio}/>
-        <div className="h-screen w-full sm:w-[540px] xl:w-4/12 relative z-10 rounded-xl -mt-2">
-          <Image className='rounded-3xl' src="/images/belakang3.png" layout='fill' alt='couple'/>
-        </div>
+        <Couple/>
         <Jadwal/>
         <More/>
       </div>
