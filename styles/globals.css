@@ -43,3 +43,7 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cover {
+  pointer-events: none
+}

@@ -1,22 +1,24 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {faBookOpen, faClose, faCopy, faGift, faLeaf } from "@fortawesome/free-solid-svg-icons"
+import {faBookOpen, faLeaf } from "@fortawesome/free-solid-svg-icons"
 import Image from 'next/image'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero';
-import Jadwal from '../components/Jadwal';
-import More from '../components/More';
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import Couple from '../components/Couple'
+import dynamic from 'next/dynamic';
+import classnames from "classnames";
 
 
 export default function Home() {
 
-      const router = useRouter()
-      const kepada = router.query.to
+  const router = useRouter()
+  const kepada = router.query.to
 
+  const Navbar = dynamic(() => import('../components/Navbar'), { loading: () => ''});
+  const Hero = dynamic(() => import('../components/Hero'), { loading: () => ''});
+  const Couple = dynamic(() => import('../components/Couple'), { loading: () => ''});
+  const Jadwal = dynamic(() => import('../components/Jadwal'), { loading: () => ''});
+  const More = dynamic(() => import('../components/More'), { loading: () => ''});
   
   const [load, setLoad] = useState(false)
 
@@ -25,13 +27,12 @@ export default function Home() {
       x: "100vw", 
       opacity: 0,
       transition: {
-        duration:1
+        duration:1,
       } },
     show: {
       x:0,    
       opacity:1,
       transition: {
-        type: "tween",
         duration: .8,
       },  
     },    
@@ -64,15 +65,12 @@ export default function Home() {
 
   return (
     <>
-    
 
-      <Head>
-        <link href="http://fonts.cdnfonts.com/css/qamila" rel="stylesheet"></link>
+    <Head>
+      <link href="http://fonts.cdnfonts.com/css/qamila" rel="stylesheet"></link>
     </Head>
-
-
     
-    <div className='fixed top-0 w-full z-10'>
+    <div className={classnames('fixed top-0 w-full z-20', load? 'pointer-events-none': '')}>
           <motion.div
           variants={cover_animate}
           initial="hidden"
@@ -89,7 +87,7 @@ export default function Home() {
             <p className='z-10 text-white text-2xl font-bold text-center px-3 font-wedding'>{kepada}</p>
             <br></br>
             <p className='z-10 text-slate-600 text-sm font-bold text-center px-3'>*Mohon Maaf bila ada kesalahan penulisan nama dan gelar</p>
-            <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
+            <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10 pointer-events-auto'
                 animate={{ scale: .9 }}
                 transition={{
                 repeat: Infinity,

@@ -10,7 +10,7 @@ export default function Navbar(){
         <div className='h-auto w-full py-5 text-center fixed flex justify-center items-center bottom-0 z-20 overflow-x-hidden'>
           <div className='w-[260px] h-auto bg-purple-400 flex justify-between py-1 px-2 rounded-lg'>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
               content="Home" 
               placement="top" 
               animate={{
@@ -23,7 +23,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
               content="Couple" 
               placement="top" 
               animate={{
@@ -35,7 +35,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
               content="Calendar" 
               placement="top" 
               animate={{
@@ -47,7 +47,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
               content="Galery" 
               placement="top" 
               animate={{
@@ -59,7 +59,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
               content="Gift" 
               placement="top" 
               animate={{
