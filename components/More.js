@@ -55,12 +55,12 @@ export default function More(){
     }
 
     return (
-        <div className='h-[1800px] w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl' id='gift'>
+        <div className='h-[1800px] w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl'>
             <div className='h-[500px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
                 <div className='text-xl mt-9 z-10'>
                     <FontAwesomeIcon icon={faMapLocation} className="fa-2xl"/>
                 </div>
-                <p className='font-bold font-qamila mt-4 z-10 text-3xl'>Resepsi</p>
+                <p className='font-bold font-qamila mt-4 z-10 text-3xl'>Detail Acara</p>
                 <p className='font-serif mt-2 z-10 text-2xl'>Minggu</p>
                 <p className='font-mono mt-4 z-10 text-3xl font-bold tanggal'>04</p>
                 <p className='font-serif mt-4 z-10 text-3xl font-semibold'>Desember 2022</p>
@@ -82,7 +82,7 @@ export default function More(){
                 </motion.div>
                 <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
             </div>
-            <div className='h-[300px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
+            <div className='h-[300px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative' id='gift'>
                 <div className='text-xl mt-9 z-10'>
                     <FontAwesomeIcon icon={faGift} className="fa-2xl scale-125"/>
                 </div>
@@ -115,13 +115,14 @@ export default function More(){
 <br></br>
             <Image src="/images/main.png" height={300} width={300} alt="main"/>
 
-            <p className="text-center px-10">
-                Atas kehadiran dan do’a restu dari bapak/ibu/saudara/I sekalian, kami mengucapkan Terima Kasih.
+            <p className="text-center px-10 font-serif">
+                Kami yang Berbahagia.
             </p>
-
-            <p className="text-center px-10 mt-4 text-3xl font-qamila font-bold text-[#d106b2]">
+<br></br>
+            <p className="text-center px-10 text-3xl font-qamila font-bold text-[#d106b2] scale-125">
                 Syafiq & Ina
             </p>
+            
 
             {/* modal hadiah */}
             <motion.div className='w-full sm:w-[540px] xl:w-4/12 h-[600px] bg-gray-50 rounded-3xl rounded-b-none flex flex-col items-center fixed z-20 bottom-0 left-auto right-auto ' 

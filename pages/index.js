@@ -72,12 +72,12 @@ export default function Home() {
           animate={load ? "hidden" : "show"}
           className='w-full h-screen bg-black relative z-50 overflow-y-hidden flex flex-col items-center justify-center px-3 '>
               <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80' priority/>
-            <p className='z-10 text-white text-xl font-bold'>The Wedding Of</p>
+            <p className='z-10 text-white text-xl font-bold -mt-10 sm:mt-0'>The Wedding Of</p>
             <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110'/>
 
           <p className='z-10 text-3xl text-center px-3 font-qamila text-pink-700 scale-150 -mt-10'>Ina & Syafiq</p>
           <br></br>
-            <p className='z-10 text-white text-xl text-center'>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <p className='z-10 text-white text-lg text-center px-20 leading-6'>Kepada Yth. Bapak/Ibu/Saudara/i</p>
             <br></br>
             <p className='z-10 text-white text-2xl font-bold text-center px-3 font-wedding'>{kepada}</p>
             <br></br>
