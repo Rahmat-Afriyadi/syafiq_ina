@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'qamila' : ['Qamila'],
+        'monsieur' : ['Monsieur La Doulaise'],
+        'pacifico' : ['Pacifico'],
       }
     },
   },

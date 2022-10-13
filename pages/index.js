@@ -4,9 +4,12 @@ import {faBookOpen, faLeaf } from "@fortawesome/free-solid-svg-icons"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import Head from 'next/head'
 import dynamic from 'next/dynamic';
 import classnames from "classnames";
+import Jadwal from '../components/Jadwal'
+import More from '../components/More'
+import { Gallery } from '../components/Gallery'
+import Head from 'next/head'
 
 
 export default function Home() {
@@ -17,8 +20,7 @@ export default function Home() {
   const Navbar = dynamic(() => import('../components/Navbar'), { loading: () => ''});
   const Hero = dynamic(() => import('../components/Hero'), { loading: () => ''});
   const Couple = dynamic(() => import('../components/Couple'), { loading: () => ''});
-  const Jadwal = dynamic(() => import('../components/Jadwal'), { loading: () => ''});
-  const More = dynamic(() => import('../components/More'), { loading: () => ''});
+  // const Gallery = dynamic(() => import('../components/Gallery'), { loading: () => ''});
   
   const [load, setLoad] = useState(false)
 
@@ -42,9 +44,7 @@ export default function Home() {
     const [audio, setAudio] = useState(null)
 
     const onScroll = function(){
-        console.log("test")
         if (audio == null) {
-            console.log("masuk sini")
             setAudio(new Audio("/music/song1.mp3"))          
             setMuted(false)  
         }            
@@ -65,22 +65,17 @@ export default function Home() {
 
   return (
     <>
-
-    <Head>
-      <link href="http://fonts.cdnfonts.com/css/qamila" rel="stylesheet"></link>
-    </Head>
-    
     <div className={classnames('fixed top-0 w-full z-20', load? 'pointer-events-none': '')}>
           <motion.div
           variants={cover_animate}
           initial="hidden"
           animate={load ? "hidden" : "show"}
           className='w-full h-screen bg-black relative z-50 overflow-y-hidden flex flex-col items-center justify-center px-3 '>
-              <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80'/>
+              <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80' priority/>
             <p className='z-10 text-white text-xl font-bold'>The Wedding Of</p>
             <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110'/>
 
-          <p className='z-10 text-3xl text-center px-3 font-qamila text-pink-500 scale-150 -mt-10'>Ina & Syafiq</p>
+          <p className='z-10 text-3xl text-center px-3 font-qamila text-pink-700 scale-150 -mt-10'>Ina & Syafiq</p>
           <br></br>
             <p className='z-10 text-white text-xl text-center'>Kepada Yth. Bapak/Ibu/Saudara/i</p>
             <br></br>
@@ -111,6 +106,7 @@ export default function Home() {
         <Navbar/>
         <Hero audio={audio}/>
         <Couple/>
+        <Gallery/>
         <Jadwal/>
         <More/>
       </div>

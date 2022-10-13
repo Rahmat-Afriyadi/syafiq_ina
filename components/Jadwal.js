@@ -71,7 +71,7 @@ export default function Jadwal(){
                 <br></br>
                 <p className='text-lg text-center'>Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
             </div>            
-            <Image className='rounded-3xl' src="/images/bg.png" layout='fill' alt="bg"/>
+            <Image className='rounded-3xl' src="/images/bg.png" layout='fill' alt="bg" priority/>
         </div>
     )
 }
