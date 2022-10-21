@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
-import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap, faMessage } from "@fortawesome/free-solid-svg-icons"
+import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap, faMessage, faEnvelopeOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
 export default function More(){
@@ -59,14 +59,67 @@ export default function More(){
             <div className='h-[1000px] w-11/12 rounded-lg mt-12 flex flex-col items-center shadow-lg relative pt-6 px-4'>
                 <p className='font-bold mt-4 z-10 text-3xl font-monsieur'>Wishes</p>
                 <p className='font-serif mt-2 z-10 text-md text-center px-12'>Berikan Ucapan Terbaik untuk kedua Mempelai</p>
-                <div className=" w-full h-[500px] z-10 rounded-xl border-solid border-2 border-blue-200 mt-6 flex flex-col px-2 py-3">
+                <div className=" w-full h-[750px] z-10 rounded-xl border-solid border-2 border-blue-200 mt-6 flex flex-col px-2 py-3">
                     <div className="flex w-full justify-center">
-                        <p><FontAwesomeIcon icon={faMessage}/> 39 Ucapan</p>
+                        <p className="text-blue-600 font-bold"><FontAwesomeIcon icon={faEnvelopeOpen}/> 39 Ucapan</p>
                     </div>
                     <div className="flex w-full justify-center py-2 space-x-1">
-                        <div className="w-16 h-9 bg-blue-200 rounded-md"></div>
-                        <div className="w-16 h-9 bg-blue-200 rounded-md"></div>
-                        <div className="w-16 h-9 bg-blue-200 rounded-md"></div>
+                        <div className="w-20 h-12 pt-1 bg-blue-200 rounded-md text-green-600 font-bold hadir text-center">
+                            <h3>40</h3>
+                            <p className="text-[12px]">Hadir</p>
+                        </div>
+                        <div className="w-20 h-12 pt-1 bg-red-200 rounded-md text-red-600 font-bold hadir text-center">
+                            <h3>40</h3>
+                            <p className="text-[12px]">Tidak Hadir</p>
+                        </div>
+                        <div className="w-20 h-12 pt-1 bg-gray-200 rounded-md text-gray-600 font-bold hadir text-center">
+                            <h3>40</h3>
+                            <p className="text-[12px]">Ragu</p>
+                        </div>
+                    </div>
+                    
+                    <div className="w-full justify-center my-3 px-5">
+                        <hr className="w-full border-1 border-gray-300"/>
+                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400" value="Rahmat"/>
+                        <textarea className="w-full my-2 border-solid border-2 rounded border-gray-400" placeholder="Pesan"/>
+                        <select className="w-full my-2 py-2 border-solid border-2 rounded border-gray-400 text-gray-600">
+                            <option>Pilih Konfirmasi Kehadiran:</option>
+                            <option>Hadir</option>
+                            <option>Tidak Hadir</option>
+                            <option>Ragu</option>
+                        </select>
+                        <button type="submit" className="mt-3 py-1 rounded w-40 text-center bg-blue-600 text-white font-bold text-sm"><FontAwesomeIcon icon={faChevronRight}/> Kirim</button>
+                    </div>
+
+                    <div className="w-full my-5 px-5 overflow-auto" id="comment">
+                        <div className="grid grid-cols-12 gap-2">
+                            <div className="col-span-2">
+                                <p className="rounded-full bg-violet-800 py-2 text-white text-center">M</p>
+                            </div>
+                            <div className="col-span-10">
+                                <h3 className="text-blue-600 font-bold">Nama</h3>
+                                <p className="text-sm text-gray-400">4/10/2022 10:54</p>
+                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque at commodi debitis minima aspernatur aliquid maxime minus, dolor atque, consequuntur assumenda aperiam inventore laboriosam cum, voluptatem eum illum necessitatibus.</p>
+                            </div>
+
+                            <div className="col-span-2">
+                                <p className="rounded-full bg-violet-800 py-2 text-white text-center">M</p>
+                            </div>
+                            <div className="col-span-10">
+                                <h3 className="text-blue-600 font-bold">Nama</h3>
+                                <p className="text-sm text-gray-400">4/10/2022 10:54</p>
+                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque at commodi debitis minima aspernatur aliquid maxime minus, dolor atque, consequuntur assumenda aperiam inventore laboriosam cum, voluptatem eum illum necessitatibus.</p>
+                            </div>
+                            
+                            <div className="col-span-2">
+                                <p className="rounded-full bg-violet-800 py-2 text-white text-center">M</p>
+                            </div>
+                            <div className="col-span-10">
+                                <h3 className="text-blue-600 font-bold">Nama</h3>
+                                <p className="text-sm text-gray-400">4/10/2022 10:54</p>
+                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque at commodi debitis minima aspernatur aliquid maxime minus, dolor atque, consequuntur assumenda aperiam inventore laboriosam cum, voluptatem eum illum necessitatibus.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
