@@ -9,8 +9,7 @@ import classnames from "classnames";
 import Jadwal from '../components/Jadwal'
 import More from '../components/More'
 import { Gallery } from '../components/Gallery'
-import Head from 'next/head'
-
+import Script from 'next/script'
 
 export default function Home() {
 
@@ -40,31 +39,94 @@ export default function Home() {
     },    
   };
 
+
   const [muted, setMuted] = useState(true)
-    const [audio, setAudio] = useState(null)
+  const [audio, setAudio] = useState(null)
+  const [socket, setSocket] = useState(null)
+  const [input, setInput] = useState("")
+  let data1;
+  // const socket = io("ws://localhost:8080")
 
-    const onScroll = function(){
-        if (audio == null) {
-            setAudio(new Audio("/music/song1.mp3"))          
-            setMuted(false)  
-        }            
-    }
+  
+  
+  // function testWS(){
+    // setSocket(new WebSocket("ws://localhost:8181/socket"))
+    // if (socket != null) {
+    //   console.log("tidak null")
+    //   socket.onopen = () => {
+    //     socket.send(JSON.stringify(msg))
+    //     console.log("test1")
+    //   }
+    // }
+  // }
 
-    useEffect(function(){
-        document.body.addEventListener('click', onScroll, true); 
-    // remove event on unmount to prevent a memory leak with the cleanup
-        return () => document.body.removeEventListener('click', onScroll, true); 
-    },[audio]);
+
+  // useEffect(() => {
+  //   setSocket(new WebSocket("ws://localhost:8181/socket"))
+  //   if (socket != null) {
+
+  //     socket.onmessage = (e) => {
+  //       console.log(e.data)
+  //     };
+
+  //     return () => {
+  //       socket.close()
+  //     }
+  //   }
+  // }, [socket])
+
 
     useEffect(function(){
         if (audio != null) {
             audio.muted = false
             audio.play()            
         }
+
+        function onScroll() {
+          if (audio == null) {
+            setAudio(new Audio("/music/song1.mp3"))          
+            setMuted(false)  
+          }  
+        }
+
+        document.body.addEventListener('click', onScroll, true); 
+    // remove event on unmount to prevent a memory leak with the cleanup
+        return () => document.body.removeEventListener('click', onScroll, true); 
+
     },[audio]);
+
+  // function displayTime(date = new Date()){
+  //   year = date.getFullYear
+  //   month
+  // }
+
+  useEffect(function(){
+    // Enable pusher logging - don't include this in production
+
+    var pusher = new Pusher('bb38092e1dac94cc76b4', {
+      cluster: 'ap1'
+    });
+
+    let msg = {
+      "name" : "",
+      "comment" : "",
+      "status" : 0,
+      "created_at" : ""
+    }    
+
+    var channel = pusher.subscribe('live_chat_invitation');
+    channel.bind('message', function(data) {
+      msg.name = data.presence.name
+      msg.comment = data.comment
+      msg.status = data.presence.status
+      msg.created_at = data.CreatedAt
+      console.log("ini data nya",msg)
+    });
+  },[])
 
   return (
     <>
+      <Script src='https://js.pusher.com/7.2/pusher.min.js' strategy="beforeInteractive"/>
     <div className={classnames('fixed top-0 w-full z-20', load? 'pointer-events-none': '')}>
           <motion.div
           variants={cover_animate}
@@ -74,7 +136,7 @@ export default function Home() {
               <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80' priority/>
             <p className='z-10 text-white text-xl font-bold -mt-10 sm:mt-0'>The Wedding Of</p>
             <div className='-mt-6'>
-              <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110'/>
+              <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110' priority/>
             </div>
 
           <p className='z-10 text-3xl text-center px-3 font-qamila text-pink-700 scale-150 -mt-10'>Ina & Syafiq</p>
@@ -104,6 +166,7 @@ export default function Home() {
         load ?
       <>
       <div className='w-full flex flex-col items-center overflow-x-hidden'> 
+        {/* <div className='h-32 w-32 bg-black z-20 cursor-pointer' onClick={testWS}></div> */}
         <div className='h-[40px] text-center text-2xl' id='home'>Reception &nbsp; <FontAwesomeIcon icon={faLeaf}/> &nbsp; Invitation</div>
         <Navbar/>
         <Hero audio={audio}/>

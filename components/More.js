@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
-import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap } from "@fortawesome/free-solid-svg-icons"
+import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap, faMessage } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
 export default function More(){
@@ -55,7 +55,35 @@ export default function More(){
     }
 
     return (
-        <div className='h-[1800px] w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl'>
+        <div className='h-auto w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl pt-3 pb-11'>
+            <div className='h-[1000px] w-11/12 rounded-lg mt-12 flex flex-col items-center shadow-lg relative pt-6 px-4'>
+                <p className='font-bold mt-4 z-10 text-3xl font-monsieur'>Wishes</p>
+                <p className='font-serif mt-2 z-10 text-md text-center px-12'>Berikan Ucapan Terbaik untuk kedua Mempelai</p>
+                <div className=" w-full h-[500px] z-10 rounded-xl border-solid border-2 border-blue-200 mt-6 flex flex-col px-2 py-3">
+                    <div className="flex w-full justify-center">
+                        <p><FontAwesomeIcon icon={faMessage}/> 39 Ucapan</p>
+                    </div>
+                    <div className="flex w-full justify-center py-2 space-x-1">
+                        <div className="w-16 h-9 bg-blue-200 rounded-md"></div>
+                        <div className="w-16 h-9 bg-blue-200 rounded-md"></div>
+                        <div className="w-16 h-9 bg-blue-200 rounded-md"></div>
+                    </div>
+                </div>
+                <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
+                    animate={{ scale: .9 }}
+                    transition={{
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: .8
+                    }}
+                >
+                    <a href="https://goo.gl/maps/1QRSyAexsJyXGRdJ9" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faMap} className="fa-xl"/>
+                        &ensp; Lihat Alamat
+                    </a>
+                </motion.div>
+                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
+            </div>
             <div className='h-[500px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
                 <div className='text-xl mt-9 z-10'>
                     <FontAwesomeIcon icon={faMapLocation} className="fa-2xl"/>
@@ -82,6 +110,8 @@ export default function More(){
                 </motion.div>
                 <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
             </div>
+
+            
             <div className='h-[300px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative' id='gift'>
                 <div className='text-xl mt-9 z-10'>
                     <FontAwesomeIcon icon={faGift} className="fa-2xl scale-125"/>
@@ -113,7 +143,7 @@ export default function More(){
                 Wassalamualaikum Wr. Wb.
             </p>
 <br></br>
-            <Image src="/images/main.png" height={300} width={300} alt="main"/>
+            <Image src="/images/main.png" height={300} width={300} alt="main" priority/>
 
             <p className="text-center px-10 font-serif">
                 Kami yang Berbahagia.
