@@ -9,7 +9,6 @@ import classnames from "classnames";
 import Jadwal from '../components/Jadwal'
 import More from '../components/More'
 import { Gallery } from '../components/Gallery'
-import Script from 'next/script'
 
 export default function Home() {
 
@@ -126,7 +125,7 @@ export default function Home() {
 
   return (
     <>
-      <Script src='https://js.pusher.com/7.2/pusher.min.js' strategy="beforeInteractive"/>
+      
     <div className={classnames('fixed top-0 w-full z-20', load? 'pointer-events-none': '')}>
           <motion.div
           variants={cover_animate}
