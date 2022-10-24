@@ -43,7 +43,7 @@ export default function Comment(){
     },[])
 
     const socketInitializer = async () => {
-        await fetch('/api/socket');
+        await fetch('https://syafiq-ina.vercel.app/api/socket');
 
         socket = io()
 
