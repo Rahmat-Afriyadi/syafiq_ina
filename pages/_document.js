@@ -5,8 +5,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* <script src='https://js.pusher.com/7.2/pusher.min.js' ></script> */}
-        <Script src='https://js.pusher.com/7.2/pusher.min.js' strategy="beforeInteractive"/>
       </Head>
       <body>
         <Main />

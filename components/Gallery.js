@@ -1,10 +1,9 @@
-// import { motion } from "framer-motion"
-// import Image from "next/image"
 import classnames from "classnames"
-// import { useRef, useState, useEffect } from "react"
-// import Slider from 'react-slick';
-// import React from 'react';
-
+import * as React from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { wrap } from "popmotion";
+import Image from "next/image";
 
 const images = [
     "/images/gallery/1.jpeg",
@@ -12,76 +11,6 @@ const images = [
     "/images/gallery/3.jpeg",
     "/images/gallery/4.jpeg",
 ]
-
-// export default function Gallery(){
-
-//     // const [width, setWidth] = useState(0)
-//     // const carousel = useRef()
-
-//     // useEffect(()=>{
-
-//     //     console.log(carousel.current.offsetWidth)
-
-//     // },[])
-
-//     const settings = {
-//     centerMode: true,
-//     centerPadding: '10px',
-//     slidesToShow: 5,
-//     speed: 500,
-//     slidesToScroll: 1,
-//     arrows: true,
-//     dots: false,
-//     responsive: [
-//       {
-//         breakpoint: 768,
-//         settings: {
-//           arrows: false,
-//           slidesToShow: 3,
-//         },
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           arrows: false,
-//           slidesToShow: 1,
-//         },
-//       },
-//     ],
-//   };
-
-//   const renderSlides = images.map((num) => (
-//     <img className="trending-img" key={num} src={num} alt="" />
-//   ));
-
-//     return (
-//         <div className="h-[1000px] w-full sm:w-[540px] xl:w-4/12 relative rounded-xl text-center flex flex-col items-center justify-center px-4 pb-3" id="calendar">
-//             <Image className='rounded-3xl' src="/images/belakang4.png" layout='fill' alt="bg"/>
-
-             
-//             <motion.div className="cursor-grab z-10 overflow-hidden bg-purple-300 ml-[50vw]">
-//                 <motion.div className="flex z-10" drag='x'dragConstraints={{right: 0, left: -575}}>
-//                     {images.map((image, index)=>{
-//                         return (
-//                             <motion.div key={index} className={classnames("min-h-[400px] min-w-[275px] ml-3 bg-cover bg-center z-10 rounded-lg bg-black" ,
-//                                 // "bg-[url('" + image + "')]" 
-//                             )}>
-//                             </motion.div>
-//                         )
-//                     })}
-//                 </motion.div>
-//             </motion.div>
-//         </div>
-
-//     )
-// }
-
-import * as React from "react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
-import Image from "next/image";
-// import { images } from "./image-data";
 
 const variants = {
   enter: (direction) => {
@@ -127,10 +56,6 @@ export const Gallery = () => {
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
-
-  React.useEffect(() => {
-    console.log(page)
-  },[page])
 
   return (
     

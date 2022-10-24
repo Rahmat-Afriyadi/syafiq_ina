@@ -1,6 +1,11 @@
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import '../styles/globals.css'
 
+import Axios from "axios";
+
+Axios.defaults.baseURL = "https://live-chat-invitation.herokuapp.com";
+Axios.defaults.withCredentials = true;
+
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false
 

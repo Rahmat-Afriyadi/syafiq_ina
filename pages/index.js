@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faBookOpen, faLeaf } from "@fortawesome/free-solid-svg-icons"
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic';
 import classnames from "classnames";
 import Jadwal from '../components/Jadwal'
 import More from '../components/More'
 import { Gallery } from '../components/Gallery'
+import { useRouter } from 'next/router'
 
-export default function Home() {
+export default function Home() {  
 
   const router = useRouter()
   const kepada = router.query.to
@@ -18,7 +18,6 @@ export default function Home() {
   const Navbar = dynamic(() => import('../components/Navbar'), { loading: () => ''});
   const Hero = dynamic(() => import('../components/Hero'), { loading: () => ''});
   const Couple = dynamic(() => import('../components/Couple'), { loading: () => ''});
-  // const Gallery = dynamic(() => import('../components/Gallery'), { loading: () => ''});
   
   const [load, setLoad] = useState(false)
 
@@ -41,40 +40,7 @@ export default function Home() {
 
   const [muted, setMuted] = useState(true)
   const [audio, setAudio] = useState(null)
-  const [socket, setSocket] = useState(null)
-  const [input, setInput] = useState("")
-  let data1;
-  // const socket = io("ws://localhost:8080")
-
   
-  
-  // function testWS(){
-    // setSocket(new WebSocket("ws://localhost:8181/socket"))
-    // if (socket != null) {
-    //   console.log("tidak null")
-    //   socket.onopen = () => {
-    //     socket.send(JSON.stringify(msg))
-    //     console.log("test1")
-    //   }
-    // }
-  // }
-
-
-  // useEffect(() => {
-  //   setSocket(new WebSocket("ws://localhost:8181/socket"))
-  //   if (socket != null) {
-
-  //     socket.onmessage = (e) => {
-  //       console.log(e.data)
-  //     };
-
-  //     return () => {
-  //       socket.close()
-  //     }
-  //   }
-  // }, [socket])
-
-
     useEffect(function(){
         if (audio != null) {
             audio.muted = false
@@ -83,7 +49,7 @@ export default function Home() {
 
         function onScroll() {
           if (audio == null) {
-            setAudio(new Audio("/music/song1.mp3"))          
+            // setAudio(new Audio("/music/song1.mp3"))          
             setMuted(false)  
           }  
         }
@@ -94,34 +60,7 @@ export default function Home() {
 
     },[audio]);
 
-  // function displayTime(date = new Date()){
-  //   year = date.getFullYear
-  //   month
-  // }
-
-  useEffect(function(){
-    // Enable pusher logging - don't include this in production
-
-    var pusher = new Pusher('bb38092e1dac94cc76b4', {
-      cluster: 'ap1'
-    });
-
-    let msg = {
-      "name" : "",
-      "comment" : "",
-      "status" : 0,
-      "created_at" : ""
-    }    
-
-    var channel = pusher.subscribe('live_chat_invitation');
-    channel.bind('message', function(data) {
-      msg.name = data.presence.name
-      msg.comment = data.comment
-      msg.status = data.presence.status
-      msg.created_at = data.CreatedAt
-      console.log("ini data nya",msg)
-    });
-  },[])
+ 
 
   return (
     <>
@@ -165,7 +104,7 @@ export default function Home() {
         load ?
       <>
       <div className='w-full flex flex-col items-center overflow-x-hidden'> 
-        {/* <div className='h-32 w-32 bg-black z-20 cursor-pointer' onClick={testWS}></div> */}
+        {/* <div className='h-20 w-20 bg-black z-20 cursor-pointer' onClick={testWS}></div> */}
         <div className='h-[40px] text-center text-2xl' id='home'>Reception &nbsp; <FontAwesomeIcon icon={faLeaf}/> &nbsp; Invitation</div>
         <Navbar/>
         <Hero audio={audio}/>

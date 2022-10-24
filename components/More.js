@@ -1,15 +1,16 @@
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
-import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap, faMessage, faEnvelopeOpen, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap, } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
+import Comment from "./Comment"
 
 export default function More(){
 
     const [showModal, setShowModal] = useState(false);
     const [copied , setCopied] = useState(false);
     const [showRekening, setShowRekening] = useState(true);    
-    const [showAlamat, setShowAlamat] = useState(true);    
+    const [showAlamat, setShowAlamat] = useState(true);   
 
     function handleShowModal()
     {
@@ -54,89 +55,12 @@ export default function More(){
         }
     }
 
+
     return (
         <div className='h-auto w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl pt-3 pb-11'>
-            <div className='h-[1000px] w-11/12 rounded-lg mt-12 flex flex-col items-center shadow-lg relative pt-6 px-4'>
-                <p className='font-bold mt-4 z-10 text-3xl font-monsieur'>Wishes</p>
-                <p className='font-serif mt-2 z-10 text-md text-center px-12'>Berikan Ucapan Terbaik untuk kedua Mempelai</p>
-                <div className=" w-full h-[750px] z-10 rounded-xl border-solid border-2 border-blue-200 mt-6 flex flex-col px-2 py-3">
-                    <div className="flex w-full justify-center">
-                        <p className="text-blue-600 font-bold"><FontAwesomeIcon icon={faEnvelopeOpen}/> 39 Ucapan</p>
-                    </div>
-                    <div className="flex w-full justify-center py-2 space-x-1">
-                        <div className="w-20 h-12 pt-1 bg-blue-200 rounded-md text-green-600 font-bold hadir text-center">
-                            <h3>40</h3>
-                            <p className="text-[12px]">Hadir</p>
-                        </div>
-                        <div className="w-20 h-12 pt-1 bg-red-200 rounded-md text-red-600 font-bold hadir text-center">
-                            <h3>40</h3>
-                            <p className="text-[12px]">Tidak Hadir</p>
-                        </div>
-                        <div className="w-20 h-12 pt-1 bg-gray-200 rounded-md text-gray-600 font-bold hadir text-center">
-                            <h3>40</h3>
-                            <p className="text-[12px]">Ragu</p>
-                        </div>
-                    </div>
-                    
-                    <div className="w-full justify-center my-3 px-5">
-                        <hr className="w-full border-1 border-gray-300"/>
-                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400" value="Rahmat"/>
-                        <textarea className="w-full my-2 border-solid border-2 rounded border-gray-400" placeholder="Pesan"/>
-                        <select className="w-full my-2 py-2 border-solid border-2 rounded border-gray-400 text-gray-600">
-                            <option>Pilih Konfirmasi Kehadiran:</option>
-                            <option>Hadir</option>
-                            <option>Tidak Hadir</option>
-                            <option>Ragu</option>
-                        </select>
-                        <button type="submit" className="mt-3 py-1 rounded w-40 text-center bg-blue-600 text-white font-bold text-sm"><FontAwesomeIcon icon={faChevronRight}/> Kirim</button>
-                    </div>
 
-                    <div className="w-full my-5 px-5 overflow-auto" id="comment">
-                        <div className="grid grid-cols-12 gap-2">
-                            <div className="col-span-2">
-                                <p className="rounded-full bg-violet-800 py-2 text-white text-center">M</p>
-                            </div>
-                            <div className="col-span-10">
-                                <h3 className="text-blue-600 font-bold">Nama</h3>
-                                <p className="text-sm text-gray-400">4/10/2022 10:54</p>
-                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque at commodi debitis minima aspernatur aliquid maxime minus, dolor atque, consequuntur assumenda aperiam inventore laboriosam cum, voluptatem eum illum necessitatibus.</p>
-                            </div>
-
-                            <div className="col-span-2">
-                                <p className="rounded-full bg-violet-800 py-2 text-white text-center">M</p>
-                            </div>
-                            <div className="col-span-10">
-                                <h3 className="text-blue-600 font-bold">Nama</h3>
-                                <p className="text-sm text-gray-400">4/10/2022 10:54</p>
-                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque at commodi debitis minima aspernatur aliquid maxime minus, dolor atque, consequuntur assumenda aperiam inventore laboriosam cum, voluptatem eum illum necessitatibus.</p>
-                            </div>
-                            
-                            <div className="col-span-2">
-                                <p className="rounded-full bg-violet-800 py-2 text-white text-center">M</p>
-                            </div>
-                            <div className="col-span-10">
-                                <h3 className="text-blue-600 font-bold">Nama</h3>
-                                <p className="text-sm text-gray-400">4/10/2022 10:54</p>
-                                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque at commodi debitis minima aspernatur aliquid maxime minus, dolor atque, consequuntur assumenda aperiam inventore laboriosam cum, voluptatem eum illum necessitatibus.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
-                    animate={{ scale: .9 }}
-                    transition={{
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    duration: .8
-                    }}
-                >
-                    <a href="https://goo.gl/maps/1QRSyAexsJyXGRdJ9" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faMap} className="fa-xl"/>
-                        &ensp; Lihat Alamat
-                    </a>
-                </motion.div>
-                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
-            </div>
+            <Comment/>
+            
             <div className='h-[500px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
                 <div className='text-xl mt-9 z-10'>
                     <FontAwesomeIcon icon={faMapLocation} className="fa-2xl"/>
@@ -164,14 +88,14 @@ export default function More(){
                 <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
             </div>
 
-            
-            <div className='h-[300px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative' id='gift'>
-                <div className='text-xl mt-9 z-10'>
+
+            <div className='h-[350px] sm:h-[310px] w-11/12 rounded-lg mt-12 flex flex-col justify-center items-center px-5 shadow-lg relative space-y-4' id='gift'>
+                <div className='text-xl z-10'>
                     <FontAwesomeIcon icon={faGift} className="fa-2xl scale-125"/>
                 </div>
-                <p className='font-bold text-xl mt-7 z-10'>Kirim Hadiah</p>
-                <p className='mt-3 text-base text-center leading-4 z-10'>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
-                <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
+                <p className='font-bold text-xl z-10'>Kirim Hadiah</p>
+                <p className='mt-3 text-base text-center leading-4 z-10 px-10 sm:px-5'>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
+                <motion.div className='w-[170px] h-[39px] bg-gray-500 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
                     animate={{ scale: .9 }}
                     transition={{
                     repeat: Infinity,
@@ -253,11 +177,6 @@ export default function More(){
                     : ""
                     
                 }
-                
-                
-                {/* <div className='w-[400px] h-[45px] bg-gray-300 rounded-xl mt-3 px-5 flex items-center cursor-pointer'>
-                <p className='text-lg p-1 font-bold'><FontAwesomeIcon icon={faGift}/> &ensp; Rekening</p>
-                </div> */}
             </motion.div>
         </div>
     )
