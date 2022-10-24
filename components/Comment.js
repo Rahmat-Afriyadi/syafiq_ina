@@ -43,9 +43,10 @@ export default function Comment(){
     },[])
 
     const socketInitializer = async () => {
-        await fetch('https://syafiq-ina.vercel.app/api/socket');
+        console.log(window.location.origin)
+        await fetch('http://localhost:3000/api/route');
 
-        socket = io()
+        socket = io(window.location.origin)
 
         socket.on('connect', () => {
             console.log('connected')
@@ -137,7 +138,7 @@ export default function Comment(){
                         &ensp; Lihat Alamat
                     </a>
                 </motion.div>
-                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
+                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg"/>
             </div>
     )
 }

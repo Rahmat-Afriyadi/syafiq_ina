@@ -3,7 +3,7 @@ import '../styles/globals.css'
 
 import Axios from "axios";
 
-Axios.defaults.baseURL = "https://live-chat-invitation.herokuapp.com";
+Axios.defaults.baseURL = "http://localhost:8080";
 Axios.defaults.withCredentials = true;
 
 import { config } from "@fortawesome/fontawesome-svg-core"

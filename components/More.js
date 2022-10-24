@@ -85,7 +85,7 @@ export default function More(){
                         &ensp; Lihat Alamat
                     </a>
                 </motion.div>
-                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
+                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg"/>
             </div>
 
 
@@ -107,7 +107,7 @@ export default function More(){
                     <FontAwesomeIcon icon={faGift} className="fa-xl"/>
                     &ensp; Amplop Digital
                 </motion.div>
-                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg" priority/>
+                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg"/>
             </div>
 
             <br></br>
