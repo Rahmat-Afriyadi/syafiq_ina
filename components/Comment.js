@@ -44,7 +44,7 @@ export default function Comment(){
 
     const socketInitializer = async () => {
         console.log(window.location.origin)
-        await fetch('http://localhost:3000/api/route');
+        await fetch(window.location.origin+'/api/route');
 
         socket = io(window.location.origin)
 
