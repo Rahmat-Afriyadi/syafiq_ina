@@ -115,6 +115,7 @@ export default function Comment(){
                             // messages.filter((element, index) => {
                             //     return messages.indexOf(element) === index;
                             // })
+                            messages != null ?
                             messages.map((data, index) => 
                                 (
                                     index <= 9 ?
@@ -132,6 +133,7 @@ export default function Comment(){
                                     : ""
                                 )
                             )
+                            :""
                         }
                     </div>
                 </div>
