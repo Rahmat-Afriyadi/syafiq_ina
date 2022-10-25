@@ -21,11 +21,11 @@ export default function Comment(){
     const [hesitant, setHesitant] = useState(0);
 
     // form
+    const [receiver, setReceiver] = useState("Rahmat Afriyadi")
     const [message, setMessage] = useState("")
     const [status, setStatus] = useState(0)
 
     const [channel, ably] = useChannel("chat", (message) => {
-        setMessages(messages => ([...messages.slice(-199), message]));
         setPresent(message.data.status.present)
         setNPresent(message.data.status.npresent)
         setHesitant(message.data.status.hesitant)
@@ -34,7 +34,7 @@ export default function Comment(){
 
     function submitComment(){
         axios.post("/store", {
-            name: kepada,
+            name: receiver,
             comment: message,
             status: parseInt(status)
         })
@@ -71,6 +71,9 @@ export default function Comment(){
     }
         
     useEffect(()=>{
+        if (kepada != null) {
+            setReceiver(kepada)
+        }
         // socketInitializer()
     },[])
 
@@ -99,7 +102,7 @@ export default function Comment(){
                     
                     <div className="w-full justify-center my-3 px-4">
                         <hr className="w-full border-1 border-gray-300"/>
-                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400" value="Rahmat" disabled/>
+                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400" value={receiver} disabled/>
                         <textarea className="w-full my-2 border-solid border-2 rounded border-gray-400" placeholder="Pesan" onChange={(e)=>{setMessage(e.target.value)}}/>
                         <select className="w-full my-2 py-2 border-solid border-2 rounded border-gray-400 text-gray-600" onChange={(e)=>{setStatus(e.target.value)}}>
                             <option>Pilih Konfirmasi Kehadiran:</option>
