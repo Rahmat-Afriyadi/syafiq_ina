@@ -6,6 +6,7 @@ import { faEnvelopeOpen, faChevronRight,faMap } from "@fortawesome/free-solid-sv
 import { motion } from "framer-motion";
 import Image from "next/image";
 import io from "socket.io-client"
+import { useChannel } from "./AblyReactEffect";
 
 let socket;
 
@@ -23,6 +24,14 @@ export default function Comment(){
     const [message, setMessage] = useState("")
     const [status, setStatus] = useState(0)
 
+    const [channel, ably] = useChannel("chat", (message) => {
+        setMessages(messages => ([...messages.slice(-199), message]));
+        setPresent(message.data.status.present)
+        setNPresent(message.data.status.npresent)
+        setHesitant(message.data.status.hesitant)
+        setMessages(messages => ([message.data.comment, ...messages]))
+    });
+
     function submitComment(){
         axios.post("/store", {
             name: kepada,
@@ -30,9 +39,11 @@ export default function Comment(){
             status: parseInt(status)
         })
         .then(function (response) {
-            socket.emit("input-change", response.data)
+            channel.publish({ name: "axios post", data: response.data })
+            // socket.emit("input-change", response.data)
         })
         .catch(function (error) {
+            console.log(error)
         });
     }   
 
@@ -43,8 +54,7 @@ export default function Comment(){
     },[])
 
     const socketInitializer = async () => {
-        console.log(window.location.origin)
-        await fetch(window.location.origin+'/api/route');
+        await fetch('/api/route');
 
         socket = io(window.location.origin)
 
@@ -61,7 +71,7 @@ export default function Comment(){
     }
         
     useEffect(()=>{
-        socketInitializer()
+        // socketInitializer()
     },[])
 
     return (

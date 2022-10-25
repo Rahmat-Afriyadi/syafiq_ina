@@ -5,20 +5,21 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic';
 import classnames from "classnames";
-import Jadwal from '../components/Jadwal'
-import More from '../components/More'
-import { Gallery } from '../components/Gallery'
 import { useRouter } from 'next/router'
 
+const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false });
+const Hero = dynamic(() => import('../components/Hero'), { ssr: false });
+const Couple = dynamic(() => import('../components/Couple'), { ssr: false });
+const Gallery = dynamic(() => import('../components/Gallery'), { ssr: false });
+const More = dynamic(() => import('../components/More'), { ssr: false });
+const Jadwal = dynamic(() => import('../components/Jadwal'), { ssr: false });
+
 export default function Home() {  
+
 
   const router = useRouter()
   const kepada = router.query.to
 
-  const Navbar = dynamic(() => import('../components/Navbar'), { loading: () => ''});
-  const Hero = dynamic(() => import('../components/Hero'), { loading: () => ''});
-  const Couple = dynamic(() => import('../components/Couple'), { loading: () => ''});
-  
   const [load, setLoad] = useState(false)
 
   const cover_animate = {
