@@ -29,17 +29,46 @@ export default function Comment(){
         setPresent(message.data.status.present)
         setNPresent(message.data.status.npresent)
         setHesitant(message.data.status.hesitant)
-        setMessages(messages => ([message.data.comment, ...messages]))
+    });
+    
+    const [channel1, ably1] = useChannel("comment", (message) => {
+        setMessages(messages => ([message.data, ...messages]))
     });
 
+    function formatDateTime(str) {
+        const tanggal = new Date(Date.parse(str))
+        const yyyy = tanggal.getFullYear();
+        let mm = tanggal.getMonth() + 1; // Months start at 0!
+        let dd = tanggal.getDate();
+
+        let hh = tanggal.getHours()
+        let i = tanggal.getMinutes()
+
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+
+        const formattedToday = dd + '/' + mm + '/' + yyyy + " " + hh +":" +i;
+        return formattedToday
+    }
+
+    let msg = {}
+
     function submitComment(){
+        msg = {
+            comment: message,
+            presence : {
+                name: receiver
+            },
+            CreatedAt: new Date()
+        }
+        channel1.publish({ name: "comment", data: msg })
         axios.post("/store", {
             name: receiver,
             comment: message,
             status: parseInt(status)
-        })
+        })        
         .then(function (response) {
-            channel.publish({ name: "axios post", data: response.data })
+            channel.publish({ name: "status", data: response.data })
             // socket.emit("input-change", response.data)
         })
         .catch(function (error) {
@@ -128,7 +157,7 @@ export default function Comment(){
                                         </div>
                                         <div className="col-span-10">
                                             <h3 className="text-blue-600 font-bold" >{data.presence.name}</h3>
-                                            <p className="text-sm text-gray-400">4/10/2022 10:54</p>
+                                            <p className="text-sm text-gray-400">{formatDateTime(data.CreatedAt)}</p>
                                             <p className="text-sm" >{data.comment}</p>
                                         </div>
                                     </div>

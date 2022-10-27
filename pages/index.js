@@ -38,7 +38,6 @@ export default function Home() {
     },    
   };
 
-
   const [muted, setMuted] = useState(true)
   const [audio, setAudio] = useState(null)
   
@@ -72,7 +71,7 @@ export default function Home() {
           initial="hidden"
           animate={load ? "hidden" : "show"}
           className='w-full h-screen bg-black relative z-50 overflow-y-hidden flex flex-col items-center justify-center px-3 py-3'>
-              <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80' priority/>
+              <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80'/>
             <p className='z-10 text-white text-xl font-bold -mt-10 sm:mt-0'>The Wedding Of</p>
             <div className='-mt-6'>
               <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110' priority/>
