@@ -49,7 +49,7 @@ export default function Home() {
 
         function onScroll() {
           if (audio == null) {
-            // setAudio(new Audio("/music/song1.mp3"))          
+            setAudio(new Audio("/music/song1.mp3"))          
             setMuted(false)  
           }  
         }
@@ -70,21 +70,19 @@ export default function Home() {
           variants={cover_animate}
           initial="hidden"
           animate={load ? "hidden" : "show"}
-          className='w-full h-screen bg-black relative z-50 overflow-y-hidden flex flex-col items-center justify-center px-3 py-3'>
+          className='w-full h-screen bg-black relative z-50 overflow-y-hidden flex flex-col items-center justify-center px-3'>
               <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80'/>
-            <p className='z-10 text-white text-xl font-bold -mt-10 sm:mt-0'>The Wedding Of</p>
-            <div className='-mt-6'>
+            <p className='z-10 text-white text-xl font-bold mt-5 md:mt-2'>The Wedding Of</p>
+            <div className='-mt-2'>
               <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110' priority/>
             </div>
 
-          <p className='z-10 text-3xl text-center px-3 font-qamila text-pink-700 scale-150 -mt-10'>Ina & Syafiq</p>
+          <p className='z-10 text-3xl text-center px-3 font-qamila text-[#c904c0] scale-150 -mt-7'>Syafiq & Ina</p>
           <br></br>
-            <p className='z-10 text-white text-lg text-center px-20 leading-6 xl:mt-6'>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-            <br></br>
+            <p className='z-10 text-white text-lg text-center px-20 leading-6 mt-2 xl:mt-6'>Kepada Yth. Bapak/Ibu/Saudara/i</p>
             <p className='z-10 text-white text-2xl font-bold text-center px-3 font-wedding'>{kepada}</p>
-            <br></br>
-            <p className='z-10 text-slate-600 text-sm font-bold text-center px-3'>*Mohon Maaf bila ada kesalahan penulisan nama dan gelar</p>
-            <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10 pointer-events-auto'
+            <p className='z-10 text-slate-600 text-sm font-bold text-center px-3 mt-2'>*Mohon Maaf bila ada kesalahan penulisan nama dan gelar</p>
+            <motion.div className='w-[170px] h-[39px] bg-[#048bc9] my-4 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10 pointer-events-auto'
                 animate={{ scale: .9 }}
                 transition={{
                 repeat: Infinity,

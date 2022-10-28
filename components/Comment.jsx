@@ -77,8 +77,17 @@ export default function Comment(){
     }   
 
     useEffect(function(){
+        if (kepada != null) {
+            setReceiver(kepada)
+        }
         axios.get("/paginate?page=1&page_size=10").then(res=> {
             setMessages(res.data)
+        })        
+        
+        axios.get("/status").then(res=> {
+            setPresent(res.data.present)
+            setNPresent(res.data.npresent)
+            setHesitant(res.data.hesitant)
         })        
     },[])
 
@@ -99,16 +108,14 @@ export default function Comment(){
         })
     }
         
-    useEffect(()=>{
-        if (kepada != null) {
-            setReceiver(kepada)
-        }
+    // useEffect(()=>{
+        
         // socketInitializer()
-    },[])
+    // },[])
 
     return (
         <div className='h-[1000px] w-11/12 rounded-lg mt-12 flex flex-col items-center shadow-lg relative pt-6 px-4'>
-                <p className='font-bold mt-4 z-10 text-3xl font-monsieur'>Wishes</p>
+                <p className='font-bold mt-4 z-10 text-3xl font-monsieur text-[#048bc9]'>Wishes</p>
                 <p className='font-serif mt-2 z-10 text-md text-center px-12'>Berikan Ucapan Terbaik untuk kedua Mempelai</p>
                 <div className=" w-full h-[750px] z-10 rounded-xl border-solid border-2 border-blue-200 mt-6 flex flex-col px-2 py-3">
                     <div className="flex w-full justify-center">
@@ -139,7 +146,7 @@ export default function Comment(){
                             <option value={1}>Hadir</option>
                             <option value={2}>Ragu</option>
                         </select>
-                        <button className="mt-3 py-1 rounded w-40 text-center bg-blue-600 text-white font-bold text-sm" onClick={submitComment}><FontAwesomeIcon icon={faChevronRight}/> Kirim</button>
+                        <button className="mt-3 py-1 rounded w-40 text-center bg-[#048bc9] text-white font-bold text-sm" onClick={submitComment}><FontAwesomeIcon icon={faChevronRight}/> Kirim</button>
                     </div>
 
                     <div className="w-full my-5 px-4 overflow-auto" id="comment">
@@ -169,7 +176,7 @@ export default function Comment(){
                         }
                     </div>
                 </div>
-                <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
+                <motion.div className='w-[170px] h-[39px] bg-[#048bc9] mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
                     animate={{ scale: .9 }}
                     transition={{
                     repeat: Infinity,

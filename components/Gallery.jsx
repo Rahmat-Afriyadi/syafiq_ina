@@ -91,7 +91,7 @@ export default function Gallery() {
               }}
             />
         </AnimatePresence>
-        <div className="text-3xl text-[#d106b2] font-qamila z-10 pointer-events-none">
+        <div className="text-3xl text-[#c904c0] font-qamila z-10 pointer-events-none">
           Gallery
         </div>
         <div className="next" onClick={() => paginate(1)}>

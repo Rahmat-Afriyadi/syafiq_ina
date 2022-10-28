@@ -6,12 +6,12 @@ import { faHome, faCalendar, faGift, faUserFriends, faBookOpen } from "@fortawes
 export default function Navbar(){
 
     return (
-        <div className='h-auto w-full py-4 text-center fixed flex justify-center items-center bottom-0 z-20 overflow-x-hidden'>
-          <div className='w-[260px] h-[55px] bg-purple-400 flex justify-between items-center py-0 px-2 rounded-lg'>
+        <div className='h-auto w-full py-1 text-center fixed flex justify-center items-center bottom-0 z-20 overflow-x-hidden'>
+          <div className='w-[260px] h-[55px] flex justify-between items-center py-0 px-2 rounded-lg'>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-[#c9c204] z-20"
               content="Home" 
-              placement="top" 
+              placement="top"
               animate={{
                 mount: { scale: 1, y: 0 },
                 unmount: { scale: 0, y: 25 },
@@ -22,7 +22,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-[#c9c204] z-20"
               content="Couple" 
               placement="top" 
               animate={{
@@ -34,7 +34,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-[#c9c204] z-20"
               content="Calendar" 
               placement="top" 
               animate={{
@@ -46,7 +46,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-[#c9c204] z-20"
               content="Galery" 
               placement="top" 
               animate={{
@@ -58,7 +58,7 @@ export default function Navbar(){
               </Button>
             </Tooltip>
             <Tooltip 
-              className="h-[39px] m-auto text-md flex items-center justify-center bg-pink-500 z-20"
+              className="h-[39px] m-auto text-md flex items-center justify-center bg-[#c9c204] z-20"
               content="Gift" 
               placement="top" 
               animate={{

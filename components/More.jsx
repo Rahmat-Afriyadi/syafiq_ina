@@ -4,6 +4,7 @@ import Image from "next/image"
 import { faGift, faClose, faCopy, faCreditCard, faMapLocation, faMap, } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 import Comment from "./Comment"
+import DetailAcara from "./DetailAcara"
 
 export default function More(){
 
@@ -60,33 +61,9 @@ export default function More(){
         <div className='h-auto w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl pt-3 pb-11'>
 
             <Comment/>
+            <DetailAcara/>
             
-            <div className='h-[500px] w-11/12 rounded-lg mt-12 flex flex-col items-center px-5 shadow-lg relative'>
-                <div className='text-xl mt-9 z-10'>
-                    <FontAwesomeIcon icon={faMapLocation} className="fa-2xl"/>
-                </div>
-                <p className='font-bold font-qamila mt-4 z-10 text-3xl'>Detail Acara</p>
-                <p className='font-serif mt-2 z-10 text-2xl'>Minggu</p>
-                <p className='font-mono mt-4 z-10 text-3xl font-bold tanggal'>04</p>
-                <p className='font-serif mt-4 z-10 text-3xl font-semibold'>Desember 2022</p>
-                <p className='font-mono z-10 text-base'>PUKUL 11.00 WIB - SELESAI</p>
-                <p className='font-serif mt-4 z-10 text-3xl font-semibold'>Lokasi Acara </p>
-                <p className='text-base text-center leading-4 z-10'>Jl. Warujaya Kp. Sugutamu No.1 Rt. 02/ Rw. 022 Depok 2 Tengah 16411</p>
-                <motion.div className='w-[170px] h-[39px] bg-gray-500 mt-5 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
-                    animate={{ scale: .9 }}
-                    transition={{
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    duration: .8
-                    }}
-                >
-                    <a href="https://goo.gl/maps/1QRSyAexsJyXGRdJ9" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faMap} className="fa-xl"/>
-                        &ensp; Lihat Alamat
-                    </a>
-                </motion.div>
-                <Image src="/images/bg.jpg" layout='fill' className='rounded-xl' alt="bg"/>
-            </div>
+            
 
 
             <div className='h-[350px] sm:h-[310px] w-11/12 rounded-lg mt-12 flex flex-col justify-center items-center px-5 shadow-lg relative space-y-4' id='gift'>
@@ -95,7 +72,7 @@ export default function More(){
                 </div>
                 <p className='font-bold text-xl z-10'>Kirim Hadiah</p>
                 <p className='mt-3 text-base text-center leading-4 z-10 px-10 sm:px-5'>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
-                <motion.div className='w-[170px] h-[39px] bg-gray-500 rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
+                <motion.div className='w-[170px] h-[39px] bg-[#048bc9] rounded-lg pl-3 flex items-center text-base text-white cursor-pointer z-10'
                     animate={{ scale: .9 }}
                     transition={{
                     repeat: Infinity,
@@ -112,11 +89,11 @@ export default function More(){
 
             <br></br>
 
-            <p className="text-center px-10 mt-4">
+            <p className="text-center px-10 mt-4 font-serif">
                 Atas kehadiran dan do’a restu dari bapak/ibu/saudara/I sekalian, kami mengucapkan Terima Kasih.
             </p>
 
-            <p className="text-center px-10 text-3xl font-monsieur font-medium mt-12">
+            <p className="text-center px-10 text-3xl font-monsieur font-medium mt-12 text-[#048bc9]">
                 Wassalamualaikum Wr. Wb.
             </p>
 <br></br>
@@ -126,7 +103,7 @@ export default function More(){
                 Kami yang Berbahagia.
             </p>
 <br></br>
-            <p className="text-center px-10 text-3xl font-qamila font-bold text-[#d106b2] scale-125">
+            <p className="text-center px-10 text-3xl font-qamila font-bold text-[#c904c0] scale-125 mb-10">
                 Syafiq & Ina
             </p>
             
