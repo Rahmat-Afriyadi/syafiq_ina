@@ -74,7 +74,7 @@ export default function Home() {
               <Image src="/images/bg.jpg" layout='fill' alt='cover' className='opacity-80'/>
             <p className='z-10 text-white text-xl font-bold mt-5 md:mt-2'>The Wedding Of</p>
             <div className='-mt-2'>
-              <Image src="/images/main.png" width={350} height={350} alt='main' className='brightness-110' priority/>
+              <Image src="/images/main.png" width={350} height={286} alt='main' className='brightness-110' priority/>
             </div>
 
           <p className='z-10 text-3xl text-center px-3 font-qamila text-[#c904c0] scale-150 -mt-7'>Syafiq & Ina</p>
