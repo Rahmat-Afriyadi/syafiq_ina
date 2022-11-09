@@ -13,6 +13,7 @@ const Couple = dynamic(() => import('../components/Couple'), { ssr: false });
 const Gallery = dynamic(() => import('../components/Gallery'), { ssr: false });
 const More = dynamic(() => import('../components/More'), { ssr: false });
 const Jadwal = dynamic(() => import('../components/Jadwal'), { ssr: false });
+const LoveStory = dynamic(() => import('../components/LoveStory'), { ssr: false });
 
 export default function Home() {  
 
@@ -49,7 +50,7 @@ export default function Home() {
 
         function onScroll() {
           if (audio == null) {
-            setAudio(new Audio("/music/song1.mp3"))          
+            // setAudio(new Audio("/music/song1.mp3"))          
             setMuted(false)  
           }  
         }
@@ -109,6 +110,7 @@ export default function Home() {
         <Couple/>
         <Gallery/>
         <Jadwal/>
+        <LoveStory/>
         <More/>
       </div>
 

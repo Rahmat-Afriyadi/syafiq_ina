@@ -58,7 +58,7 @@ export default function More(){
 
 
     return (
-        <div className='h-auto w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-2 flex flex-col items-center rounded-2xl pt-3 pb-11'>
+        <div className='h-auto w-full sm:w-[540px] xl:w-4/12 bg-yellow-100 mt-4 flex flex-col items-center rounded-2xl pt-3 pb-11'>
 
             <Comment/>
             <DetailAcara/>
@@ -97,7 +97,7 @@ export default function More(){
                 Wassalamualaikum Wr. Wb.
             </p>
 <br></br>
-            <Image src="/images/main.png" height={300} width={300} alt="main" priority/>
+            <Image src="/images/main.png" height={286} width={300} alt="main" priority/>
 
             <p className="text-center px-10 font-serif">
                 Kami yang Berbahagia.
