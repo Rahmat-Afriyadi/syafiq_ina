@@ -50,11 +50,10 @@ export default function Home() {
 
         function onScroll() {
           if (audio == null) {
-            // setAudio(new Audio("/music/song1.mp3"))          
+            setAudio(new Audio("/music/song1.mp3"))          
             setMuted(false)  
           }  
         }
-
         document.body.addEventListener('click', onScroll, true); 
     // remove event on unmount to prevent a memory leak with the cleanup
         return () => document.body.removeEventListener('click', onScroll, true); 

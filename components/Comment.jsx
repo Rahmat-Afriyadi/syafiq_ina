@@ -13,7 +13,7 @@ let socket;
 export default function Comment(){
 
     const router = useRouter()
-    const kepada = router.query.to
+    const kepada = router.query.to != null ? router.query.to : "Rahmat Afriyadi"; 
 
     const [messages, setMessages] = useState([]); 
     const [present, setPresent] = useState(0);
@@ -22,7 +22,7 @@ export default function Comment(){
 
     // form
     const [receiver, setReceiver] = useState("Rahmat Afriyadi")
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState("Hadir")
     const [status, setStatus] = useState(0)
 
     const [channel, ably] = useChannel("chat", (message) => {
@@ -77,9 +77,6 @@ export default function Comment(){
     }   
 
     useEffect(function(){
-        if (kepada != null) {
-            setReceiver(kepada)
-        }
         axios.get("/paginate?page=1&page_size=10").then(res=> {
             setMessages(res.data)
         })        
@@ -138,8 +135,8 @@ export default function Comment(){
                     
                     <div className="w-full justify-center my-3 px-4">
                         <hr className="w-full border-1 border-gray-300"/>
-                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400" value={receiver} disabled/>
-                        <textarea className="w-full my-2 border-solid border-2 rounded border-gray-400" placeholder="Pesan" onChange={(e)=>{setMessage(e.target.value)}}/>
+                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400 px-1 py-1" value={receiver} disabled/>
+                        <textarea className="w-full my-2 border-solid border-2 rounded border-gray-400 px-1" placeholder="Pesan" onChange={(e)=>{setMessage(e.target.value)}}/>
                         <select className="w-full my-2 py-2 border-solid border-2 rounded border-gray-400 text-gray-600" onChange={(e)=>{setStatus(e.target.value)}}>
                             <option>Pilih Konfirmasi Kehadiran:</option>
                             <option value={99}>Tidak Hadir</option>

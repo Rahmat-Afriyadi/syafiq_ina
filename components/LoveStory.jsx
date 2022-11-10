@@ -27,7 +27,7 @@ export default function LoveStory()
                             </div>
                         </div>
                         <br></br>
-                        <p className="text-2xl text-[#048bc9] text-left font-sans font-medium relative">01 okt 2015
+                        <p className="text-2xl text-[#048bc9] text-left font-sans font-medium relative">02 okt 2022
                         <div className="h-10 w-10 border-4 border-[#048bc9] bg-yellow-50 z-10 
                                 absolute -left-5 -ml-[25px] top-0 rounded-full text-center flex items-center justify-center text-[#048bc9]">
                                 <div className='text-xl z-10'>

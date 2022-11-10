@@ -7,8 +7,8 @@ export default function Navbar(){
 
     return (
         // <div className='h-auto w-full py-1 text-center fixed flex justify-center items-center bottom-0 z-20 overflow-x-hidden'>
-        <div className='h-auto w-full py-1 text-center fixed flex justify-center items-center bottom-0 z-20 overflow-x-hidden'>
-          <div className='relative h-[55px] flex justify-center items-center rounded-l'>
+        <div className='h-auto w-full py-1 text-center fixed flex justify-center items-center bottom-0 z-20'>
+          <div className='h-[55px] w-64 flex justify-between items-center rounded- z-20'>
             <Tooltip 
               className="h-[39px] text-md flex items-center justify-center bg-[#c9c204] z-20"
               content="Home" 
