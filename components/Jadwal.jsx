@@ -47,7 +47,7 @@ export default function Jadwal(){
     return (
         <div className="h-screen w-full sm:w-[540px] xl:w-4/12 relative rounded-xl text-center flex flex-col items-center justify-center px-4 pb-3 -mt-2" id="calendar">
             <p className='text-2xl font-bold z-10 mt-10 px-2'>Minggu, 04 Desember 2022</p>
-            <p className='text-lg z-10 mt-2'>Pukul: 11:00</p>
+            <p className='text-lg z-10 mt-2 text-center'>Pukul: 11:00 - 17:00 WIB</p>
             <div className='w-[320px] h-20 z-10 flex justify-evenly items-center mt-10'>
             <div className='w-16 h-16 bg-yellow-100 opacity-75 shadow-md rounded-lg flex flex-col items-center justify-center'>
                 <p className='text-4xl text-yellow-600 font-semibold'>{days < 10 ? "0"+days: days}</p>

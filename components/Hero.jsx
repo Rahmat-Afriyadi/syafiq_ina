@@ -28,7 +28,7 @@ export default function Hero({audio})
     return (
         <div className='h-screen w-full sm:w-[540px] xl:w-4/12 relative flex flex-col items-end justify-center px-3 space-y-1'>
             <Image className='rounded-3xl' src="/images/depan8.png" layout='fill' alt="cover_hero" />
-            <p className="ml-auto mr-auto mt-6 text-xl font-bold z-10">The Wedding Of</p>
+            <p className="ml-auto mr-auto mt-6 z-10 font-sans text-lg tracking-widest">The  Wedding  Of</p>
             <div className="ml-auto mr-auto -mt-8 md:mt-3 lg:-mt-8 md:scale-125 lg:scale-100 flex flex-col justify-center items-center">
                 <Image src="/images/main.png" width={340} height={279} className="z-10 " alt="main" priority/>
             </div>
