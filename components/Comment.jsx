@@ -13,7 +13,8 @@ let socket;
 export default function Comment(){
 
     const router = useRouter()
-    const kepada = router.query.to != null ? router.query.to : "Rahmat Afriyadi"; 
+    let kepada = router.query.to != null ? router.query.to : "Rahmat Afriyadi"; 
+    kepada = kepada.replace("dans","&")
 
     const [messages, setMessages] = useState([]); 
     const [present, setPresent] = useState(0);
@@ -57,13 +58,13 @@ export default function Comment(){
         msg = {
             comment: message,
             presence : {
-                name: receiver
+                name: kepada
             },
             CreatedAt: new Date()
         }
         channel1.publish({ name: "comment", data: msg })
         axios.post("/store", {
-            name: receiver,
+            name: kepada,
             comment: message,
             status: parseInt(status)
         })        
@@ -135,7 +136,7 @@ export default function Comment(){
                     
                     <div className="w-full justify-center my-3 px-4">
                         <hr className="w-full border-1 border-gray-300"/>
-                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400 px-1 py-1" value={receiver} disabled/>
+                        <input className="w-full my-2 border-solid border-2 rounded border-gray-400 px-1 py-1" value={kepada} disabled/>
                         <textarea className="w-full my-2 border-solid border-2 rounded border-gray-400 px-1" placeholder="Pesan" onChange={(e)=>{setMessage(e.target.value)}}/>
                         <select className="w-full my-2 py-2 border-solid border-2 rounded border-gray-400 text-gray-600" onChange={(e)=>{setStatus(e.target.value)}}>
                             <option>Pilih Konfirmasi Kehadiran:</option>

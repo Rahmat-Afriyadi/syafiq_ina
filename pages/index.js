@@ -19,7 +19,8 @@ export default function Home() {
 
 
   const router = useRouter()
-  const kepada = router.query.to
+  let kepada = String(router.query.to)
+  kepada = kepada.replace("dans","&")
 
   const [load, setLoad] = useState(false)
 
