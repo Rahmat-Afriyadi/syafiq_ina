@@ -158,7 +158,10 @@ export default function Comment(){
                                     index <= 9 ?
                                     <div className="grid grid-cols-12 gap-2" key={index}>
                                         <div className="col-span-2">
-                                            <p className="rounded-full bg-violet-800 py-2 text-white text-center">{data.presence.name.split(" ").map((n)=>n[0]).join("")}</p>
+                                            <p className="rounded-full bg-violet-800 py-2 text-white text-center">{
+                                                data.presence.name.replace("dan", "").split(" ").map((n)=>n[0]).join("").substring(0, 2)
+                                            }</p>
+                                            {/* <p className="rounded-full bg-violet-800 py-2 text-white text-center">{data.presence.name.split(" ").map((n)=>n[0]).join("").substring(0, 2)}</p> */}
                                         </div>
                                         <div className="col-span-10">
                                             <h3 className="text-blue-600 font-bold" >{data.presence.name}</h3>
